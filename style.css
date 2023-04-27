@@ -1,0 +1,83 @@
+*, ::after, ::before {
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+    background: url(imgs/nuit.jpg) no-repeat center center / cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 60%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    display: grid;
+    grid-template: auto 1fr / 1fr;
+    gap: 25px;
+}
+
+.container .header {
+    text-align: center;
+}
+
+.container .listes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 14px;
+}
+
+.container .listes .liste {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.container .listes .liste .info {
+    height: 0;
+    overflow: hidden;
+}
+
+.container .listes .liste.active .info {
+   height: 50px;
+   overflow: visible;
+}
+
+.container .listes .liste .question {
+    padding: 0 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #444;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.listes .liste .question::after {
+    content: "+";
+}
+
+.listes .liste.active .question::after {
+    content: "-";
+}
+
